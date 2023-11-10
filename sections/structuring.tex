@@ -1,0 +1,66 @@
+% !TEX root =  ../main.tex
+\section{Structuring the Document}
+
+Latex has a plethora of different methods to structure a document.
+Pick the right methods depending on the situation and the amount of content to structure, not one methods is always preferable.
+This section is filled with a lot of generated text to illustrate how the resulting structure looks like.
+
+\subsection{Structuring with Subsections}
+
+Latex has multiple strucutral elements, like \cmd{section}, \cmd{subsection} et cetera.
+These elements are \emph{visually} very heavy and represent a large break for the reader.
+Do not over-use them.
+
+\subsubsection{First Subsection}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsubsection{Another Subsection}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsubsection{Last Subsection}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsection{Structuring with Named Paragraphs}
+
+In addition to \emph{regular} paragraphs, Latexsupports \emph{named} paragraph with a short title through the \cmd{paragraph} command.
+
+\paragraph{First Paragraph} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+
+\paragraph{Another One} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+
+\paragraph{The last Paragraph} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+
+
+\subsection{Structuring with Description Lists}
+
+Description lists are, well, lists, so they should be wrapped in text and not stand alone.
+
+\begin{description}
+%
+\item[Foo] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
+\item[Bar] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
+\item[Baz] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%
+\end{description}
+
+Description lists should also not end a section.
+At the very least, you should write a summary of the contents.
+If the description list is the only content of a section though, you should really think about whether it is the right choice.
+
+
+\subsection{Basic Paragraphs and Whitespace}
+
+Structure helps to read a document, however, too much structure interrupts the flow.
+Sometimes it is easier to use simple paragraphs and whitespace to improve readbility.
+
+A simple paragraph already signals to the reader a break in the argumentation or a shift in direction.
+The direction should not fundamentally change though, consider a paragraph a simple breather that help the reader to understand when to stop and think about the current argument.
+
+\medskip
+Larger breaks in the argumentation can be indicated with a \cmd{smallskip} or a \cmd{medskip}.
+I would recommend to pick what looks better for your paper or how desperate you are for space.
+Most importantly, do not jump between \cmd{smallskip} and \cmd{medskip}, but use one command consistently.

@@ -1,0 +1,60 @@
+% !TEX root =  ../main.tex
+\section{Semantic Formatting}
+
+I always compare writing Latex documents to writing HTML websites: You are basically writing content and somehow need to format it to make it readable.
+While it is \emph{possible} to use formatting \emph{inline}, like making text {\bf bold} or {\it italic}, this is \emph{highly discouraged} for two reasons:
+
+\begin{enumerate}
+%
+\item Your paper will evolve over time and you will change the details of your formatting throughout this journey.
+Let's assume that you want to highlight code fragments or file names consistently and you start by simply using italics for that, like {\it myfile.txt}.
+At some point, you want to change that to small capitals, so you have to go through the whole paper and manually all usages to, for example, {\sc myfile.txt}.
+This is a a) lot of effort and b) very error prone.
+%
+\item It is more than likely that your paper will be rejected and that you have to resubmit it somewhere else (sorry for breaking the news ;)).
+As different venues often follow different templates, a \emph{reformat} is often necessary.
+%
+\end{enumerate}
+
+A much better alternative to inline formatting is to use semantic \emph{macros} like \cmd{emph} ("emphasize"), which templates often redefine to match their style.
+These macros serve a similar role for Latex than CSS would for HTML.
+Instead of worrying about the concrete formatting, you use them to express that you want to highlight somethings or you express a specific concept, like a \cmd{section}, a \cmd{paragraph}, or a list \cmd{item}.
+The formatting of these macros is then done centrally.
+
+The template comes with the predefined macros \cmd{code} (that we use to highlight inline source code or paths like \code{MyClass.class}) and \cmd{tool} (that we use to highlight tool names, like \tool{Java} or \tool{Maven}).
+First of all, using these macros will improve the readability of your document and using semantic macros makes it very easy to change formatting in a central place.
+Defining a macro is not that hard, but there are two styles: \emph{commands} and \emph{environments}.
+
+\paragraph{Commands}
+
+\NewDocumentCommand{\withparams}{mm}{You can just use parameters by referring to their number, like #1 or #2}
+\NewDocumentCommand{\optparams}{mO{XY}}{m:#1, opt:#2}
+\NewDocumentCommand{\noparams}{}{No parameters}
+
+New commands can be easily defined in Latex with the \cmd{NewDocumentCommand} command, check the source code of this section for examples.
+A command can have parameters (\withparams{a}{b}), optional parameters (\optparams{c}), but it does not have to (\noparams{}).
+Once defined, the command is available to all \emph{following} Latex source, so it is recommended to define your commands in the \code{preface.tex} file.
+
+
+\paragraph{Environments}
+
+As an alternative, you can define environments.
+Their definition is similar to commands (e.g., they also support parameters), but the key idea is to define the \emph{before} part and the \emph{after} part of your content.
+For example, we can define a \code{results} environment that adds information before and after your content and adds a box around it (Using the \code{framed} package that is imported in the \code{preface.tex}).
+
+\NewDocumentEnvironment{resultBox}{mm}%
+% before:
+{\begin{framed} \noindent #1}
+% after:
+{#2 \end{framed}}
+
+This definition can then be used to create a results box:
+
+\begin{resultBox}{AAA}{BBB}
+Some results ...
+\end{resultBox}
+
+The benefit of using this custom environment over directly using a \code{framed} environment everywhere is clear.
+Additional information can be trivially add, like a findings counter, or a reformat of the box design is a central change.
+
+\paragraph{Please note} You are not going to master commands and environments over night (and you do not have to), but it is good to understand how to use them as they can make your documents more maintainable and you life so much easier.

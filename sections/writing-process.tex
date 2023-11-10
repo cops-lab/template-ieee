@@ -1,0 +1,32 @@
+% !TEX root =  ../main.tex
+\section{Writing Process}
+
+Writing is a very iterative process and over time the written text gets \emph{massaged} into its final form.
+To make this process easy, it is recommended to keep as much information as possible in the document and not use external documents for planning, communication, or extra notes.
+
+The paper will be very messy initially, but the paper should make it trivial to get an estimate of the current state \emph{on a quick glance}.
+As such, we will use various Latex macros to "label" the text.
+
+The most basic indicator is \cmd{todo}.
+Use it to note down ideas during a discussion or when you do not have the time to elaborate something.
+\todo{Extend this explanation}
+
+Once you had time to add more information, the text is likely still in a rough shape.
+Use \cmd{rev} to mark text that is \emph{in principal} already \emph{content complete}, but that still requires a thorough revision.
+\rev{This makes it a lot easier to collaborators to understand which parts are still rough or which parts should be considered "done".
+
+Do not be shy and remove the \cmd{rev} tag as soon as you think that the text is polished.
+Should a collaborator feel that more work is need in a section, they will add the marker back.}
+
+Scientific paper usually contains many numbers.
+To make it easy to spot the numbers when you check your paper for consistency before submission, wrap them in a \cmd{checkNum} command.
+You will find it easier to spot the \checkNum{five} mentions of the \cmd{cmd} command in your paper when the number is highlighted.
+
+All these commands are predefined in the COPS-flavored document class that extends the basic IEEE template.
+You want to make sure that the formatting is removed before you submit the paper.
+You can find commented out \cmd{RenewCommand} instructions in the \code{preface.tex}, once you uncomment them, all formatting and extra text is gone.
+Try it out!
+
+Finally, do not include questions or instructions as comments, as someone who will only read the PDF won't see them.
+Also, trust your version control system and avoid keeping commented text in your paper.
+

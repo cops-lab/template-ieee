@@ -1,0 +1,25 @@
+% !TEX root =  ../main.tex
+\section{Citations \& References}
+
+Citing papers or external resources is very easy in Latex.
+In our field, the convention is to use the first authors \emph{last name} and \emph{et al.} to indicate that there were more authors. For example: Smith et al.~\cite{AAI34-icse} were the first to introduce foobar by perfoming blah, which lead to blubb.
+Please note the {\textasciitilde} in the Latex code, which makes sure that the citation number will never break into the next line alone, which would look weird.
+This style of citation also works for all other venues like journals~\cite{DE23-emse} or books~\cite{ABC12-abc}.
+It is also possible to cite websites~\cite{Pue08}, however, these pages should then contain relevant content for the paper.
+When the reference is only linking to a tool, it is often better to use a footnote for that.%
+\footnote{\url{https://www.maven.org}, accessed: 10-Nov-2023}
+
+As an important note, make sure that you \emph{never} use a citation as an object in a sentence (like "As shown in~\cite{DE23-emse}, ..."), this is very bad style.
+Instead, either name the authors (e.g., "Foo et al.~\cite{DE23-emse} have shown ...") or formulate it as a general statement (e.g., "Prior research has shown that ... \cite{DE23-emse}").
+
+\medskip
+Within a document, it is possible to refer to each element that has a counter, like sections or figures.
+When a \cmd{label} has been added to these elements, one can use \cmd{ref} to refer back to them.
+This way, it is possible to refer back to Section~\ref{sec:intro} or Figure~\ref{fig:abstract-image}.
+Please note that both Section and Figure are uppercase and that the Latex code again uses a {\textasciitilde} to prevent unfortunate linebreaks.
+Please also not that the prefixes \code{fig:} and \code{sec:} have been added \emph{by convention} to the \cmd{label} and \cmd{ref}.
+
+To make it easier to reference elements in the document, the template supports the \code{cleverref} package.
+It is possible to just use \cmd{Cref} to refer to the elements, without explicitly typing the elements name.
+For example, note in the Latex source how the following reference to \Cref{fig:abstract-image} does not contain the "Figure", which appears in the .pdf though.
+
