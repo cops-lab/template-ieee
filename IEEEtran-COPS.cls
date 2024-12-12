@@ -29,6 +29,11 @@
 \renewcommand*{\arraystretch}{1.2}
 
 
+%%% CITE FORMATTING (reverting back to [1,2,3] style) %%%
+\renewcommand\citepunct{,\,} % https://tex.stackexchange.com/a/76137/71993
+\renewcommand\citedash{--}
+
+
 %%% LIST FORMATTNG %%%
 \usepackage{enumitem}
 \usepackage{noindentafter}
