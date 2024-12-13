@@ -19,8 +19,11 @@
 
 
 %%% MINOR FORMAATING THINGS %%%
-\usepackage{balance} % balanced columns on last page
-\usepackage[hidelinks]{hyperref} % clickable links without border
+\usepackage{balance} % balanced columns on last page (\balance before bib)
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-} % long links in bib can break into two lines
+\usepackage{breakurl}
+\usepackage[hidelinks,breaklinks]{hyperref}
 \usepackage{cleveref}
 
 
